@@ -4,7 +4,7 @@
  * 使它们能够自动更新自己，当一个对象的改变需要同时改变其它对象，
  * 并且它不知道具体有多少对象需要改变的时候，就应该考虑使用观察者模式。
  */
-//发布 & 订阅
+//发布 & 订阅(与观察者类似，多了中间层)
 //一对多
 // 主题 保存状态，状态变化之后触发所有观察者对象(发布者)
 class Subject {
@@ -48,6 +48,16 @@ let o2 = new Observer('02', s)
 
 s.setState(12)
 
+/**
+ * 场景
+ * DOM事件
+ * document.body.addEventListener('click', function() {
+ *  console.log('hello world!');
+ * });
+ * document.body.click()
+ * 
+ * vue 响应式
+ */
 
 /**
  * 优点
@@ -60,15 +70,4 @@ s.setState(12)
 /**
  * 缺点
  * 过度使用会导致对象与对象之间的联系弱化，会导致程序难以跟踪维护和理解
- */
-
-/**
- * 场景
- * DOM事件
- * document.body.addEventListener('click', function() {
- *  console.log('hello world!');
- * });
- * document.body.click()
- * 
- * vue 响应式
  */
